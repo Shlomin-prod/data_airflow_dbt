@@ -1,1 +1,100 @@
 infrustructure/docker/logs/
+# ------------------------------------------------------
+# Python
+# ------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# ------------------------------------------------------
+# Airflow
+# ------------------------------------------------------
+
+# Logs
+infrustructure/docker/logs/
+logs/
+
+# PID files
+airflow-webserver.pid
+airflow-scheduler.pid
+
+# SQLite database (if used)
+airflow.db
+
+# Temporary files
+*.pid
+*.log
+
+# ------------------------------------------------------
+# dbt
+# ------------------------------------------------------
+
+# Compiled artifacts
+target/
+dbt_packages/
+logs/
+
+# Packages
+packages-install-path/
+
+# ------------------------------------------------------
+# Databricks
+# ------------------------------------------------------
+
+.databricks/
+.databricks-connect/
+
+# Databricks CLI config (contains credentials)
+databricks.env
+
+# ------------------------------------------------------
+# Jupyter
+# ------------------------------------------------------
+
+.ipynb_checkpoints/
+
+# ------------------------------------------------------
+# Build artifacts
+# ------------------------------------------------------
+
+dist/
+build/
+
+# ------------------------------------------------------
+# Terraform (if you add IaC later)
+# ------------------------------------------------------
+
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+
+# ------------------------------------------------------
+# Misc
+# ------------------------------------------------------
+
+*.swp
+*.tmp
+*.bak
