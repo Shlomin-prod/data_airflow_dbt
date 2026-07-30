@@ -44,7 +44,22 @@ class AutoConfig(Enum):
 
 
 # This list should be kept in sorted order.
-KNOWN_PYTHON_VERSION_STRINGS = ["3.0", "3.1", "3.3", "3.5", "3.6", "3.7", "3.8"]
+KNOWN_PYTHON_VERSION_STRINGS = [
+    "3.0",
+    "3.1",
+    "3.3",
+    "3.5",
+    "3.6",
+    "3.7",
+    "3.8",
+    "3.9",
+    "3.10",
+    "3.11",
+    "3.12",
+    "3.13",
+    "3.14",
+    "3.15",
+]
 
 
 @add_slots
@@ -75,7 +90,8 @@ class PartialParserConfig:
     #: If unspecified, it will default to the syntax of the running interpreter
     #: (rounding down from among the following list).
     #:
-    #: Currently, only Python 3.0, 3.1, 3.3, 3.5, 3.6, 3.7 and 3.8 syntax is supported.
+    #: Currently, only Python 3.0, 3.1, 3.3, and Python 3.5 through 3.15
+    #: syntax is supported.
     #: The gaps did not have any syntax changes from the version prior.
     python_version: Union[str, AutoConfig] = AutoConfig.token
 
