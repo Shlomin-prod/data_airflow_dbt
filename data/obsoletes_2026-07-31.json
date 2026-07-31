@@ -1,10 +1,42 @@
 [
     {
+        "id": 44052,
+        "upvotes": 1,
+        "downvotes": 1,
+        "created_at": "2026-07-31 14:21:21",
+        "updated_at": "2026-07-31 19:46:29",
+        "inferiors": [
+            {
+                "name": "Tobias Andrion",
+                "multiverse_id": 205870,
+                "functional_reprints_id": null
+            }
+        ],
+        "superiors": [
+            {
+                "name": "Figure of Destiny",
+                "multiverse_id": 571546,
+                "functional_reprints_id": null
+            }
+        ],
+        "labels": {
+            "downvoted": false,
+            "less_colors": false,
+            "more_colors": false,
+            "types_differ": false,
+            "strictly_better": false,
+            "subtypes_differ": true,
+            "more_colored_mana": false,
+            "supertypes_differ": true
+        },
+        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=1"
+    },
+    {
         "id": 44051,
-        "upvotes": 2,
+        "upvotes": 4,
         "downvotes": 0,
         "created_at": "2026-07-30 18:06:50",
-        "updated_at": "2026-07-30 18:54:39",
+        "updated_at": "2026-07-31 19:47:17",
         "inferiors": [
             {
                 "name": "Crazed Goblin",
@@ -33,10 +65,10 @@
     },
     {
         "id": 44050,
-        "upvotes": 2,
+        "upvotes": 4,
         "downvotes": 0,
         "created_at": "2026-07-30 17:52:30",
-        "updated_at": "2026-07-30 18:54:59",
+        "updated_at": "2026-07-31 19:45:29",
         "inferiors": [
             {
                 "name": "Wall of Torches",
@@ -65,10 +97,10 @@
     },
     {
         "id": 44049,
-        "upvotes": 1,
-        "downvotes": 1,
+        "upvotes": 2,
+        "downvotes": 2,
         "created_at": "2026-07-30 17:52:22",
-        "updated_at": "2026-07-30 18:55:13",
+        "updated_at": "2026-07-31 19:45:47",
         "inferiors": [
             {
                 "name": "Wall of Torches",
@@ -97,10 +129,10 @@
     },
     {
         "id": 44048,
-        "upvotes": 2,
+        "upvotes": 3,
         "downvotes": 0,
         "created_at": "2026-07-30 11:17:45",
-        "updated_at": "2026-07-30 17:03:00",
+        "updated_at": "2026-07-31 14:17:09",
         "inferiors": [
             {
                 "name": "Crazed Goblin",
@@ -129,10 +161,10 @@
     },
     {
         "id": 44047,
-        "upvotes": 1,
+        "upvotes": 2,
         "downvotes": 1,
         "created_at": "2026-07-30 00:07:23",
-        "updated_at": "2026-07-30 07:10:02",
+        "updated_at": "2026-07-31 10:06:43",
         "inferiors": [
             {
                 "name": "Jerrard of the Closed Fist",
@@ -161,10 +193,10 @@
     },
     {
         "id": 44046,
-        "upvotes": 1,
+        "upvotes": 2,
         "downvotes": 0,
         "created_at": "2026-07-30 00:07:04",
-        "updated_at": "2026-07-30 00:07:04",
+        "updated_at": "2026-07-31 10:06:51",
         "inferiors": [
             {
                 "name": "Jerrard of the Closed Fist",
@@ -194,9 +226,9 @@
     {
         "id": 44045,
         "upvotes": 1,
-        "downvotes": 0,
+        "downvotes": 1,
         "created_at": "2026-07-30 00:06:32",
-        "updated_at": "2026-07-30 00:06:32",
+        "updated_at": "2026-07-31 09:40:06",
         "inferiors": [
             {
                 "name": "Panther Warriors",
@@ -1602,7 +1634,7 @@
             "more_colored_mana": true,
             "supertypes_differ": true
         },
-        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=1"
+        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=2"
     },
     {
         "id": 44001,
@@ -3217,7 +3249,7 @@
             "more_colored_mana": false,
             "supertypes_differ": false
         },
-        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=2"
+        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=3"
     },
     {
         "id": 43951,
@@ -4122,10 +4154,10 @@
     },
     {
         "id": 43923,
-        "upvotes": 1,
+        "upvotes": 2,
         "downvotes": 4,
         "created_at": "2026-07-24 03:14:41",
-        "updated_at": "2026-07-26 09:27:15",
+        "updated_at": "2026-07-31 08:20:16",
         "inferiors": [
             {
                 "name": "Introduction to Annihilation",
@@ -4634,10 +4666,10 @@
     },
     {
         "id": 43907,
-        "upvotes": 2,
+        "upvotes": 3,
         "downvotes": 0,
         "created_at": "2026-07-22 20:21:10",
-        "updated_at": "2026-07-22 23:21:38",
+        "updated_at": "2026-07-31 08:13:36",
         "inferiors": [
             {
                 "name": "Lu Su, Wu Advisor",
@@ -4822,7 +4854,7 @@
             "more_colored_mana": false,
             "supertypes_differ": false
         },
-        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=3"
+        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=4"
     },
     {
         "id": 43896,
@@ -6487,7 +6519,7 @@
             "more_colored_mana": false,
             "supertypes_differ": true
         },
-        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=4"
+        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=5"
     },
     {
         "id": 43851,
@@ -8134,38 +8166,6 @@
             "subtypes_differ": false,
             "more_colored_mana": false,
             "supertypes_differ": false
-        },
-        "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=5"
-    },
-    {
-        "id": 43802,
-        "upvotes": 1,
-        "downvotes": 0,
-        "created_at": "2026-07-18 16:00:20",
-        "updated_at": "2026-07-18 16:00:20",
-        "inferiors": [
-            {
-                "name": "Giant Octopus",
-                "multiverse_id": 83104,
-                "functional_reprints_id": null
-            }
-        ],
-        "superiors": [
-            {
-                "name": "Graviton, Fundamental Force",
-                "multiverse_id": null,
-                "functional_reprints_id": null
-            }
-        ],
-        "labels": {
-            "downvoted": false,
-            "less_colors": false,
-            "more_colors": false,
-            "types_differ": false,
-            "strictly_better": false,
-            "subtypes_differ": true,
-            "more_colored_mana": false,
-            "supertypes_differ": true
         },
         "page_url": "https://www.strictlybetter.eu/api/obsoletes?page=5"
     }
