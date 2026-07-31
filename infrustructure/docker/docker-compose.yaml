@@ -82,6 +82,8 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${DATA_DIR}:/opt/airflow/data
+    - /Users/palkin/Documents/Airflow/dbt_cards/dbt_cards:/opt/airflow/dbt_cards
+    - /Users/palkin/.dbt:/opt/airflow/dbt_profiles
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on

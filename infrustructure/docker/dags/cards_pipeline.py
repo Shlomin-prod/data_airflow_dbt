@@ -28,8 +28,10 @@ from __future__ import annotations
 import io
 import json
 import os
+import subprocess
 from datetime import datetime, timedelta
 from pathlib import Path
+from airflow.sensors.base import PokeReturnValue
  
 import requests
 from requests.adapters import HTTPAdapter
@@ -46,6 +48,15 @@ VOLUME = "weather_bronze"
 DATA_DIR = Path("/opt/airflow/data")
 API_BASE_URL = "https://www.strictlybetter.eu/api/obsoletes"
 DATABRICKS_JOB_ID = 1077892079944136
+
+
+# DBT_PROJECT_DIR = "/Users/palkin/Documents/Airflow/dbt_cards/dbt_cards"
+# DBT_PROFILES_DIR = "/Users/palkin/.dbt"
+# DBT_BIN = "/Users/palkin/Documents/Airflow/dbt_cards/.venv/bin/dbt"
+DBT_PROJECT_DIR = "/opt/airflow/dbt_cards"
+DBT_PROFILES_DIR = "/opt/airflow/dbt_profiles"
+DBT_BIN = "dbt"  # now installed directly into the image's PATH
+
  
 # Safety cap so a bug/misbehaving API can't page forever. Set to None to
 # always page through everything the API reports via `last_page`.
@@ -177,9 +188,43 @@ def data_load_daily():
         run_id = response.json()["run_id"]
         print(f"Triggered Databricks run_id: {run_id}")
         return run_id
+
+    @task
+    def run_dbt_gold() -> None:
+        """Run the dbt model to create the gold table."""
+
+        result = subprocess.run(
+            [DBT_BIN, "run", "--select", "cards_agg_gold",
+            "--project-dir", DBT_PROJECT_DIR,
+            "--profiles-dir", DBT_PROFILES_DIR],
+            capture_output=True, text=True,
+        )
+        print(result.stdout)
+        if result.returncode != 0:
+            raise RuntimeError("dbt run failed")
+
+    
+    @task.sensor(poke_interval=60, timeout=60 * 30, mode="reschedule")
+    def wait_for_silver_update(databricks_run_id: int) -> PokeReturnValue:
+        w = _databricks_client()
+        
+        # Simple approach: check the Databricks job run status directly
+        run = w.jobs.get_run(run_id=databricks_run_id)
+        is_done = run.state.life_cycle_state.value in ("TERMINATED", "SKIPPED")
+        
+        if is_done and run.state.result_state.value != "SUCCESS":
+            raise RuntimeError(f"Databricks job run {databricks_run_id} failed: {run.state}")
+
+        return PokeReturnValue(is_done=is_done)
+
+    
+    
  
     file_path = read_api_data()
-    upload_to_volume(file_path) >> trigger_databricks_job()
+    job_run_id = trigger_databricks_job()
+    upload_to_volume(file_path) >> job_run_id
+    wait_for_silver_update(job_run_id) >> run_dbt_gold()
+    #run_dbt_gold(job_run_id)
  
  
 data_load_daily()
